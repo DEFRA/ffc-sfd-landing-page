@@ -1,0 +1,6 @@
+services:
+  ffc-sfd-landing-page:
+    command: >
+      sh -c "npm run test:watch"
+    volumes:
+      - ./.git:/home/node/.git

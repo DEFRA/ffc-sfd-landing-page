@@ -1,0 +1,10 @@
+services:
+  ffc-sfd-landing-page:
+    build:
+      context: .
+      target: production
+    image: ffc-sfd-landing-page
+    container_name: ffc-sfd-landing-page
+    environment:
+      APPINSIGHTS_CLOUDROLE: ffc-sfd-landing-page-local
+      APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}

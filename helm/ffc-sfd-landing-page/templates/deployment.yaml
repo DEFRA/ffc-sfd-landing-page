@@ -1,0 +1,8 @@
+{{- include "adp-helm-library.deployment" (list . "ffc-sfd-landing-page.deployment") -}}
+{{- define "ffc-sfd-landing-page.deployment" -}}
+spec:
+  template:
+    spec:
+      containers:
+      - {{ include "adp-helm-library.container" (list . "ffc-sfd-landing-page.container") }}
+{{- end -}}

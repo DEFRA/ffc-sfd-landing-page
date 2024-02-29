@@ -1,0 +1,3 @@
+{{- include "adp-helm-library.azure-ingress" (list . "ffc-sfd-landing-page.ingress") -}}
+{{- define "ffc-sfd-landing-page.ingress" -}}
+{{- end -}}

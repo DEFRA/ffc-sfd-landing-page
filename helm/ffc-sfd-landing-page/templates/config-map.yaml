@@ -1,1 +1,7 @@
 {{- include "adp-helm-library.azure-config-service-map" . -}}
+{{- define "ffc-sfd-landing-page.config-map" -}}
+data:  
+  AUTH_HOST: http://{{ .Values.container.authHost }}.{{ .Values.namespace }}
+  GATEWAY_HOST: https://{{ .Values.ingress.endpoint }}.{{ .Values.ingress.server }}
+  DATA_HOST: http://{{ .Values.container.dataHost }}.{{ .Values.namespace }}
+{{- end -}}

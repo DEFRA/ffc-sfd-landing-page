@@ -14,14 +14,14 @@ deployment: {}
 # These may be changed. See here: https://github.com/DEFRA/adp-helm-library?tab=readme-ov-file#container-template
 container:
   memCpuTier: L
-  port: 3001
+  port: 3000
   authHost: ffc-ffd-auth
   dataHost: ffc-ffd-data
 
 # These may be changed. See here: https://github.com/DEFRA/adp-helm-library?tab=readme-ov-file#container-template
 livenessProbe:
   path: /landing-page/healthz
-  port: 3001
+  port: 3000
   initialDelaySeconds: 20
   periodSeconds: 10
   failureThreshold: 3
@@ -30,7 +30,7 @@ livenessProbe:
 # These may be changed. See here: https://github.com/DEFRA/adp-helm-library?tab=readme-ov-file#container-template
 readinessProbe:
   path: /landing-page/healthy
-  port: 3001
+  port: 3000
   initialDelaySeconds: 30
   periodSeconds: 10
   failureThreshold: 3

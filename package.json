@@ -66,6 +66,9 @@
       "jest",
       "beforeAll",
       "afterAll"
+    ],
+    "ignore": [
+      "dist"
     ]
   },
   "nodemonConfig": {

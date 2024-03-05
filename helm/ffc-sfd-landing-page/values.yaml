@@ -15,8 +15,6 @@ deployment: {}
 container:
   memCpuTier: L
   port: 3000
-  authHost: ffc-ffd-auth
-  dataHost: ffc-ffd-data
 
 # These may be changed. See here: https://github.com/DEFRA/adp-helm-library?tab=readme-ov-file#container-template
 livenessProbe:

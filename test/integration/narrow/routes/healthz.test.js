@@ -1,14 +1,21 @@
+const { createServer } = require('../../../../app/server')
+
 describe('Healthz test', () => {
-  const server = require('../../../../app/server')
+  let server
 
   beforeEach(async () => {
+    server = await createServer()
     await server.start()
+  })
+
+  afterEach(async () => {
+    await server.stop()
   })
 
   test('GET /healthz route returns 200', async () => {
     const options = {
       method: 'GET',
-      url: '/healthz'
+      url: '/landing-page/healthz'
     }
 
     const response = await server.inject(options)

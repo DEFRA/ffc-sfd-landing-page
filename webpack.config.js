@@ -2,24 +2,21 @@ const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { DEVELOPMENT, TEST, PRODUCTION } = require('./app/constants/environments')
 
-const isDev = process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
+const routePrefix = process.env.ROUTE_PREFIX || '/landing-page'
 
-console.log(`Running webpack in ${isDev ? 'development' : 'production'} mode`)
+const isDev = process.env.NODE_ENV === DEVELOPMENT || process.env.NODE_ENV === TEST
+
+console.log(`Running webpack in ${isDev ? DEVELOPMENT : PRODUCTION} mode`)
 
 module.exports = {
   entry: {
     core: [
-      './app/frontend/css/index.js',
-      './app/frontend/images/android-chrome-192x192.png',
-      './app/frontend/images/android-chrome-512x512.png',
-      './app/frontend/images/apple-touch-icon.png',
-      './app/frontend/images/defra-logo-black.png',
-      './app/frontend/images/defra-logo-white.png',
-      './app/frontend/images/favicon.ico'
+      './app/frontend/css/index.js'
     ]
   },
-  mode: isDev ? 'development' : 'production',
+  mode: isDev ? DEVELOPMENT : PRODUCTION,
   module: {
     rules: [
       {
@@ -38,7 +35,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: isDev,
+              sourceMap: true,
               sassOptions: {
                 outputStyle: 'compressed'
               }
@@ -65,6 +62,7 @@ module.exports = {
   output: {
     filename: 'js/[name].[fullhash].js',
     path: path.resolve(__dirname, 'app/dist'),
+    publicPath: `${routePrefix}/assets/`,
     library: '[name]'
   },
   plugins: [
@@ -73,7 +71,10 @@ module.exports = {
       inject: false,
       filename: '../views/_layout.njk',
       template: 'app/views/_layout.template.njk',
-      chunks: ['core']
+      chunks: ['core'],
+      metadata: {
+        routePrefix
+      }
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[fullhash].css'

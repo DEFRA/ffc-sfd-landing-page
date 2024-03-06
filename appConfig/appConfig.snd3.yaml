@@ -1,3 +1,9 @@
 - key: APPINSIGHTS_CONNECTIONSTRING
   value: "{{servicename}}-APPINSIGHTS-CONNECTIONSTRING"
   type: "keyvault"
+- key: AUTH_HOST
+  value: "http://ffc-sfd-auth.fcp-sfd"
+- key: GATEWAY_HOST
+  value: "https://ffc-sfd-landing-page.snd3.adp.defra.gov.uk"
+- key: DATA_HOST
+  value: "http://ffc-sfd-data.fcp-sfd"

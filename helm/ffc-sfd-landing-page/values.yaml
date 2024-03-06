@@ -18,7 +18,7 @@ container:
 
 # These may be changed. See here: https://github.com/DEFRA/adp-helm-library?tab=readme-ov-file#container-template
 livenessProbe:
-  path: /healthz
+  path: /landing-page/healthz
   port: 3000
   initialDelaySeconds: 20
   periodSeconds: 10
@@ -27,7 +27,7 @@ livenessProbe:
 
 # These may be changed. See here: https://github.com/DEFRA/adp-helm-library?tab=readme-ov-file#container-template
 readinessProbe:
-  path: /healthy
+  path: /landing-page/healthy
   port: 3000
   initialDelaySeconds: 30
   periodSeconds: 10

@@ -8,3 +8,6 @@ services:
     environment:
       APPINSIGHTS_CLOUDROLE: ffc-sfd-landing-page-local
       APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}
+      AUTH_HOST: ${AUTH_HOST:-http://ffc-sfd-proxy:3000}
+      GATEWAY_HOST: ${GATEWAY_HOST:-http://localhost:3000}
+      DATA_HOST: ${DATA_HOST:-http://ffc-sfd-data:3004/graphql}

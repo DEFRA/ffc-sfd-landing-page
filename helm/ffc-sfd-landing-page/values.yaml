@@ -40,3 +40,6 @@ ingress:
   class: nginx
   endpoint: ffc-sfd-landing-page
   server: ffc-sfd-landing-page.{ENVIRONMENT}.adp.defra.gov.uk
+  type: minion
+  path: /landing-page
+  defaultPath: /landing-page

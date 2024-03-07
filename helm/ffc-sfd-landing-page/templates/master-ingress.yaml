@@ -1,6 +1,7 @@
 {{- include "adp-helm-library.azure-ingress" (list . "ffc-sfd-landing-page.master-ingress") -}}
 {{- define "ffc-sfd-landing-page.master-ingress" -}}
 metadata:
+  name: {{ .Values.name }}-master
   annotations:
     nginx.org/mergeable-ingress-type: "master"
     nginx.org/server-snippets: |

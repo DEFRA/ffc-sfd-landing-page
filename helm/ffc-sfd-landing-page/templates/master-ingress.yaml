@@ -4,6 +4,10 @@ metadata:
   name: {{ .Values.name }}-master
   annotations:
     nginx.org/mergeable-ingress-type: "master"
+    nginx.org/server-snippets: |
+      location / {
+          return 301 https://{{ .Values.ingress.endpoint }}.{{ .Values.ingress.server}}{{ .Values.ingress.defaultPath }}$request_uri;
+      }
 spec:
   rules:
     - host: {{ .Values.ingress.endpoint }}.{{ .Values.ingress.server }}

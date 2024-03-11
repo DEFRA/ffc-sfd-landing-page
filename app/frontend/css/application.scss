@@ -1,5 +1,5 @@
-$govuk-assets-path: "~govuk-frontend/govuk/assets/";
-@import "~govuk-frontend/govuk/all";
+$govuk-assets-path: "~govuk-frontend/dist/govuk/assets/";
+@import "~govuk-frontend/dist/govuk/all";
 
 .govuk-divider {
   border-bottom: 5px solid #1d70b8;

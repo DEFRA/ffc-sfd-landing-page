@@ -11,7 +11,6 @@ module.exports = {
           const statusCode = response.output.statusCode
 
           if (statusCode === 401) {
-            console.log(`Redirecting to ${serverConfig.gatewayHost}/auth/sign-in?redirect=${request.url.pathname}`)
             return h.redirect(`${serverConfig.gatewayHost}/auth/sign-in?redirect=${request.url.pathname}`)
           }
 

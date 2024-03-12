@@ -6,4 +6,4 @@
 - key: GATEWAY_HOST
   value: "https://ffc-sfd-landing-page.snd3.adp.defra.gov.uk"
 - key: DATA_HOST
-  value: "http://ffc-sfd-data.ffc-sfd"
+  value: "http://ffc-sfd-data.ffc-sfd/graphql"

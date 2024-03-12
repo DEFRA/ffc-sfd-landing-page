@@ -2,7 +2,7 @@ const Joi = require('joi')
 const { DEVELOPMENT, TEST, PRODUCTION } = require('../constants/environments')
 
 const schema = Joi.object().keys({
-  port: Joi.number().default(3000),
+  port: Joi.number().default(3001),
   env: Joi.string().valid(DEVELOPMENT, TEST, PRODUCTION).default(DEVELOPMENT),
   serviceName: Joi.string().default('Single Front Door'),
   routePrefix: Joi.string().default('/landing-page'),

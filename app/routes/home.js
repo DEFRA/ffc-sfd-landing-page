@@ -8,7 +8,8 @@ module.exports = [{
   path: '/home',
   options: { auth: { strategy: 'jwt', scope: [USER] } },
   handler: async (request, h) => {
-    const defraIdToken = request.state.ffc_ffd_auth_token
+    console.log('Retrieving data')
+    const defraIdToken = request.state.ffc_sfd_auth_token
     const crn = request.auth.credentials.crn
     const query = `query {
           customerBusinesses {

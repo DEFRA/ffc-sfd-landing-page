@@ -8,7 +8,7 @@ services:
     image: ffc-sfd-landing-page-development
     container_name: ffc-sfd-landing-page-development
     ports:
-      - "3000:3000"
+      - "3001:3001"
       - "9001:9229"
     volumes:
       - ./app:/home/node/app

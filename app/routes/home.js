@@ -21,20 +21,16 @@ module.exports = [{
             }
           }
         }`
-    try {
-      const { payload } = await Wreck.post(serverConfig.dataHost, {
-        headers: {
-          crn,
-          Authorization: defraIdToken,
-          'Content-Type': 'application/json'
-        },
-        payload: JSON.stringify({ query }),
-        json: true
-      })
-      return h.view('home', { customerBusinesses: payload.data.customerBusinesses })
-    } catch (error) {
-      console.log(error)
-      return h.view('500').code(500).takeover()
-    }
+    console.log(serverConfig.dataHost)
+    const { payload } = await Wreck.post(serverConfig.dataHost, {
+      headers: {
+        crn,
+        Authorization: defraIdToken,
+        'Content-Type': 'application/json'
+      },
+      payload: JSON.stringify({ query }),
+      json: true
+    })
+    return h.view('home', { customerBusinesses: payload.data.customerBusinesses })
   }
 }]

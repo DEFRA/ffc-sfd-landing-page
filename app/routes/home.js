@@ -21,7 +21,6 @@ module.exports = [{
             }
           }
         }`
-    console.log(serverConfig.dataHost)
     const { payload } = await Wreck.post(serverConfig.dataHost, {
       headers: {
         crn,

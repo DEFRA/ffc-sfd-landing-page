@@ -8,7 +8,6 @@ module.exports = [{
   path: '/home',
   options: { auth: { strategy: 'jwt', scope: [USER] } },
   handler: async (request, h) => {
-    console.log('Retrieving data')
     const defraIdToken = request.state.ffc_sfd_auth_token
     const crn = request.auth.credentials.crn
     const query = `query {
@@ -30,6 +29,6 @@ module.exports = [{
       payload: JSON.stringify({ query }),
       json: true
     })
-    return h.view('home', { customerBusinesses: payload.data.customerBusinesses })
+    return h.view('home', { customerBusinesses: payload.data.customerBusinesses, ahwpHost: serverConfig.ahwpHost })
   }
 }]

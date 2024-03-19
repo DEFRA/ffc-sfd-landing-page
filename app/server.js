@@ -20,6 +20,7 @@ const createServer = async () => {
   server.validator(Joi)
   await server.register(require('@hapi/inert'))
   await server.register(require('./plugins/views'))
+  await server.register(require('./plugins/view-context'))
   await server.register(require('hapi-auth-jwt2'))
   await server.register(require('./plugins/auth'))
   await server.register(require('./plugins/router'), { routes: { prefix: serverConfig.routePrefix } })

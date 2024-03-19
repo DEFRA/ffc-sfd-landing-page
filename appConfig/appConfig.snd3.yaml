@@ -7,3 +7,5 @@
   value: "https://ffc-sfd-landing-page.snd3.adp.defra.gov.uk"
 - key: DATA_HOST
   value: "http://ffc-sfd-data.ffc-sfd/graphql"
+- key: AHWP_HOST
+  value: "https://ffc-sfd-ahwp-stub.snd3.adp.defra.gov.uk"

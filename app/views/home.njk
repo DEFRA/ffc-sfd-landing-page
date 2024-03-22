@@ -1,18 +1,9 @@
 {% extends '_layout.njk' %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 {% block beforeContent %}
   {{ super() }}
-  {{ govukBackLink({
-        text: "Back",
-        href: "/",
-        attributes: {
-          id: "back"
-        }
-      }) 
-    }}
 {% endblock %}
 
 {% block content %}
@@ -20,47 +11,99 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-xl">{{ auth.credentials.name }}</span>
-        Your businesses
+        Your details
       </h1>
+      {{ govukSummaryList({
+        rows: [{
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: person.fullName
+          }
+        }, {
+          key: {
+            text: "Customer reference number"
+          },
+          value: {
+            text: person.crn
+          }
+        }, {
+          key: {
+            text: "Address"
+          },
+          value: {
+            text: person.address.fullAddress
+          }
+        }, {
+          key: {
+            text: "Email address"
+          },
+          value: {
+            text: person.email
+          }
+        }, {
+          key: {
+            text: "Mobile number"
+          },
+          value: {
+            text: person.mobile
+          }
+        }]
+      }) }}
     </div>
   </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form>
-        <div class="govuk-form-group">
-          <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--l" for="search">
-              Search businesses for
-            </label>
-          </h1>
-          <div id="event-name-hint" class="govuk-hint">
-            business name, e.g. Abbey Farm or SBI number, e.g. 123456789
-          </div>
-          <input class="govuk-input govuk-!-width-three-quarters" id="search" name="search" type="text"/>
-          <button class="govuk-button" data-module="govuk-button">Search</button>
-        </div>
-      </form>
-
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Business name</th>
-            <th scope="col" class="govuk-table__header">SBI number</th>
-            <th scope="col" class="govuk-table__header"></th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          {% for organisation in organisations %}
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">{{organisation.name}}</th>
-            <td class="govuk-table__cell">{{organisation.sbi}}</td>
-            <td class="govuk-table__cell">
-              <a href="/business" class="govuk-link">View business hub</a>
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+      <h2 class="govuk-heading-m">
+        <span class="govuk-caption-m">{{ organisation.name }}</span>
+        Your business
+      </h2>
+      {{ govukSummaryList({
+        rows: [{
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: organisation.name
+          }
+        }, {
+          key: {
+            text: "Single business identifier"
+          },
+          value: {
+            text: organisation.sbi
+          }
+        }, {
+          key: {
+            text: "Address"
+          },
+          value: {
+            text: organisation.address.fullAddress
+          }
+        }, {
+          key: {
+            text: "Email address"
+          },
+          value: {
+            text: organisation.email
+          }
+        }, {
+          key: {
+            text: "Business type"
+          },
+          value: {
+            text: organisation.type
+          }
+        }, {
+          key: {
+            text: "Legal status"
+          },
+          value: {
+            text: organisation.legalStatus
+          }
+        }]
+      }) }}
     </div>
     <div class="govuk-grid-column-one-third">
       <div class="govuk-form-group">
@@ -69,18 +112,6 @@
         <ul class="govuk-list">
           <li>
             <a class class="govuk-link" href="/auth/picker">Change organisation</a>
-          </li> 
-          <li>
-            <a class="govuk-link" href="#">Personal details</a>
-          </li>
-          <li>
-            <a class="govuk-link" href="#">Register a business</a>
-          </li>
-          <li>
-            <a class="govuk-link" href="#">Message inbox</a>
-          </li>
-          <li>
-            <a class="govuk-link" href="#">Queries</a>
           </li>
         </ul>
       </div>

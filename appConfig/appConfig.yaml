@@ -4,3 +4,7 @@
   value: "3001"
 - key: APPINSIGHTS_CLOUDROLE
   value: "{{serviceName}}"  
+- key: DATA_HOST
+  value: "http://ffc-sfd-data.ffc-sfd/graphql"
+- key: AUTH_HOST
+  value: "http://ffc-sfd-auth.ffc-sfd"

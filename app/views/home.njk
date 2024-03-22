@@ -50,10 +50,10 @@
           </tr>
         </thead>
         <tbody class="govuk-table__body">
-          {% for business in customerBusinesses.businesses %}
+          {% for organisation in organisations %}
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">{{business.name}}</th>
-            <td class="govuk-table__cell">{{business.sbi}}</td>
+            <th scope="row" class="govuk-table__header">{{organisation.name}}</th>
+            <td class="govuk-table__cell">{{organisation.sbi}}</td>
             <td class="govuk-table__cell">
               <a href="/business" class="govuk-link">View business hub</a>
             </td>
@@ -68,7 +68,7 @@
         <h1 class="govuk-heading-m">Account options</h1>
         <ul class="govuk-list">
           <li>
-            <a class class="govuk-link" href="/landing-page/picker">Choose organisation</a>
+            <a class class="govuk-link" href="/auth/picker">Change organisation</a>
           </li> 
           <li>
             <a class="govuk-link" href="#">Personal details</a>

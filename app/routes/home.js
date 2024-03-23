@@ -20,12 +20,11 @@ const getPerson = async (request) => {
           person {
             crn
             title
-            firstName
-            lastName
+            fullName
             landline
             mobile
             email
-            address: {
+            address {
               fullAddress
             }
             doNotContact
@@ -46,7 +45,7 @@ const getPerson = async (request) => {
 
 const getOrganisation = async (request) => {
   const query = `query {
-          organisation(organisationId: "${request.auth.credentials.organisationId}") {
+          organisation(organisationId: ${request.auth.credentials.organisationId}) {
             sbi
             name
             mobile

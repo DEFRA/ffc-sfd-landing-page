@@ -23,6 +23,7 @@ const createServer = async () => {
   await server.register(require('./plugins/view-context'))
   await server.register(require('hapi-auth-jwt2'))
   await server.register(require('./plugins/auth'))
+  await server.register(require('./plugins/auth-refresh'))
   await server.register(require('./plugins/router'), { routes: { prefix: serverConfig.routePrefix } })
   await server.register(require('./plugins/errors'))
   await server.register(require('./plugins/crumb'))

@@ -31,7 +31,7 @@
     "@hapi/vision": "7.0.3",
     "@hapi/wreck": "18.0.1",
     "applicationinsights": "2.8.0",
-    "ffc-auth": "0.8.1",
+    "ffc-auth": "0.10.2",
     "govuk-frontend": "5.2.0",
     "hapi-auth-jwt2": "10.4.0",
     "hapi-pino": "12.1.0",

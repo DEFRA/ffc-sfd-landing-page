@@ -114,6 +114,7 @@
           </li>
         </ul>
       </div>
+      {% if auth.isAhwpSubmitUser %}
       <div class="govuk-form-group">
         <div class="govuk-divider"></div>
         <h1 class="govuk-heading-m">Annual health and welfare review</h1>
@@ -126,6 +127,7 @@
           </li>
         </ul>
       </div>
+      {% endif %}
     </div>
   </div>
 {% endblock %}

@@ -1,4 +1,4 @@
-const { serverConfig } = require('../config')
+const { handle401 } = require('ffc-auth')
 
 module.exports = {
   plugin: {
@@ -11,7 +11,7 @@ module.exports = {
           const statusCode = response.output.statusCode
 
           if (statusCode === 401) {
-            return h.redirect(`${serverConfig.gatewayHost}/auth/sign-in?redirect=${request.url.pathname}`)
+            return handle401(request, h)
           }
 
           if (statusCode === 403) {
@@ -25,7 +25,8 @@ module.exports = {
           request.log('error', {
             statusCode,
             data: response.data,
-            message: response.message
+            message: response.message,
+            stack: response.stack
           })
 
           return h.view('500').code(statusCode)

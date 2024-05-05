@@ -10,7 +10,7 @@ const schema = Joi.object().keys({
   gatewayHost: Joi.string().required(),
   dataHost: Joi.string().required(),
   ahwpHost: Joi.string().required(),
-  refreshTokens: Joi.boolean().default(false)
+  refreshTokens: Joi.boolean().default(true)
 })
 
 const config = {

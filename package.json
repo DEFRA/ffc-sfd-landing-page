@@ -1,6 +1,6 @@
 {
   "name": "ffc-sfd-landing-page",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "",
   "homepage": "github.com?owner=defra&repo=ffc-sfd-landing-page&organization=defra",
   "main": "app/index.js",

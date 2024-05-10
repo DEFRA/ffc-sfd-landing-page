@@ -37,6 +37,7 @@ resources:
 extends:
   template: /pipelines/common-app-build.yaml@DEFRA-ADPPipelineCommon
   parameters:
+    programmeName: "ffc"
     projectName: "ffc-sfd-landing-page"
     serviceName: "ffc-sfd-landing-page"
     deployFromFeature: ${{ parameters.deployFromFeature }}
@@ -52,5 +53,3 @@ extends:
       filetype: "yaml"
       variableGroups:
         - ffc-sfd-landing-page-<environment>
-      variables:
-        - ffc-sfd-landing-page-APPINSIGHTS-CONNECTIONSTRING

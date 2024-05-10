@@ -46,6 +46,7 @@ const getPerson = async (request) => {
 const getOrganisation = async (request) => {
   const query = `query {
           organisation(organisationId: ${request.auth.credentials.organisationId}) {
+            id
             sbi
             name
             mobile

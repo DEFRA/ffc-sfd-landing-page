@@ -38,8 +38,7 @@ readinessProbe:
 # Your URL will be your <service-name>.<environment>.adp.defra.gov.uk for a front-end Web UI component. Azure Front Door is the Global Load Balancer, CDN and WAF. Nginx is the in-cluster ingress controller.
 ingress:
   class: nginx
-  endpoint: ffc-sfd-landing-page
+  endpoint: ffc-sfd
   server: adp.defra.gov.uk
   type: minion
   path: /landing-page
-  defaultPath: /landing-page

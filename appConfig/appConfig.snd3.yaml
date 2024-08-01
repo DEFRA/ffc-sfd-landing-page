@@ -1,7 +1,0 @@
-- key: APPINSIGHTS_CONNECTIONSTRING
-  value: "{{servicename}}-APPINSIGHTS-CONNECTIONSTRING"
-  type: "keyvault"
-- key: GATEWAY_HOST
-  value: "https://ffc-sfd.snd3.adp.defra.gov.uk"
-- key: AHWP_HOST
-  value: "https://ffc-sfd-ahwp-stub.snd3.adp.defra.gov.uk"
